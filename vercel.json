@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/scheduler", "destination": "https://postolab.com", "permanent": false }
+  ]
+}
