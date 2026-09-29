@@ -112,7 +112,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .flow .lbl.w{color:#fff;font-weight:700}
 .flow .lbl.o{color:var(--accent)}
 .flow .dash{width:34px;height:1px;background:repeating-linear-gradient(90deg,var(--dim) 0 4px,transparent 4px 8px)}
-@media (max-width:520px){.chaos-shapes,.order-lines{transform:scale(.8)}.flow{gap:6px}}
+
 
 /* SECTIONS */
 section{border-bottom:1px solid var(--line)}
@@ -214,6 +214,8 @@ footer li a:hover{color:var(--accent)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 @media (max-width:600px){.sec{padding-top:72px;padding-bottom:72px}.product{padding:28px 20px 24px}.feat{padding:26px 20px 28px}.step{padding:24px 20px}}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.flow{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}}
+@media (max-width:520px){.flow{gap:4px}.chaos-shapes{zoom:.62}.order-lines{width:78px}.flow .dash{width:12px}.core{width:64px;height:64px;padding:10px;gap:4px}.hero p.lead{font-size:17px}}
 </style>
 </head>
 <body>
