@@ -114,6 +114,18 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .flow .dash{width:34px;height:1px;background:repeating-linear-gradient(90deg,var(--dim) 0 4px,transparent 4px 8px)}
 
 
+
+/* STATS */
+.stats{border-bottom:1px solid var(--line);background:var(--bg-2)}
+.stats .grid4{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:40px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:clamp(38px,5vw,60px);font-weight:800;letter-spacing:-.05em;line-height:1}
+.stat b span{color:var(--accent)}
+.stat b span.cnt{color:var(--text)}
+.stat small{display:block;margin-top:12px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim)}
+@media (max-width:760px){.stats .grid4{grid-template-columns:1fr 1fr}.stat{padding:28px 16px}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
 /* SECTIONS */
 section{border-bottom:1px solid var(--line)}
 .sec{padding-top:96px;padding-bottom:96px}
@@ -261,6 +273,17 @@ footer li a:hover{color:var(--accent)}
     </div>
   </div>
 </header>
+
+<section class="stats" aria-label="Max Baginda Trading in numbers">
+  <div class="wrap">
+    <div class="grid4">
+      <div class="stat"><b><span class="cnt" data-to="4.2" data-dec="1">0</span>M<span>+</span></b><small class="mono">Followers across our Pages</small></div>
+      <div class="stat"><b><span class="cnt" data-to="27">0</span></b><small class="mono">Facebook Pages owned &amp; managed</small></div>
+      <div class="stat"><b><span class="cnt" data-to="2">0</span></b><small class="mono">Products live</small></div>
+      <div class="stat"><b>24<span>/</span>7</b><small class="mono">Automated publishing</small></div>
+    </div>
+  </div>
+</section>
 
 <section id="products">
   <div class="wrap sec">
@@ -444,6 +467,16 @@ footer li a:hover{color:var(--accent)}
 (function(){
   var c=document.getElementById('clicks'); if(!c) return; var n=12480;
   setInterval(function(){ n+=Math.floor(Math.random()*7)+1; c.textContent=n.toLocaleString('en-US'); },900);
+})();
+// Stats count-up
+(function(){
+  var els=document.querySelectorAll('.cnt');
+  function run(e){var to=parseFloat(e.dataset.to),d=+(e.dataset.dec||0),t0=null;
+    function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1400,1);p=1-Math.pow(1-p,3);e.textContent=(to*p).toFixed(d);if(p<1)requestAnimationFrame(f);}
+    requestAnimationFrame(f);}
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.textContent=parseFloat(e.dataset.to).toFixed(+(e.dataset.dec||0))});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){run(x.target);io.unobserve(x.target);}})},{threshold:.4});
+  els.forEach(function(e){io.observe(e)});
 })();
 // Reveal on scroll
 (function(){
