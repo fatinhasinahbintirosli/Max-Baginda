@@ -116,7 +116,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 
 /* SECTIONS */
 section{border-bottom:1px solid var(--line)}
-.sec{padding:96px 0}
+.sec{padding-top:96px;padding-bottom:96px}
 .sec-head{margin-bottom:56px}
 .sec-head h2{font-size:clamp(40px,6vw,60px);font-weight:800;letter-spacing:-.05em;line-height:1}
 .sec-head .bar{width:60px;height:3px;background:var(--accent);margin-top:18px}
@@ -213,6 +213,7 @@ footer li a:hover{color:var(--accent)}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@media (max-width:600px){.sec{padding-top:72px;padding-bottom:72px}.product{padding:28px 20px 24px}.feat{padding:26px 20px 28px}.step{padding:24px 20px}}
 </style>
 </head>
 <body>
@@ -225,7 +226,6 @@ footer li a:hover{color:var(--accent)}
       <a class="l" href="#services">Services</a>
       <a class="l" href="#about">About</a>
       <a class="l" href="#contact">Contact</a>
-      <a class="btn btn-white btn-sm" href="https://postolab.com">Login</a>
     </div>
   </div>
 </nav>
