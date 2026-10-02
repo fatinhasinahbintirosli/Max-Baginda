@@ -38,6 +38,7 @@ main p+p{margin-top:12px}
 main ul,main ol{padding-left:0;list-style:none;margin-top:10px}
 main li{padding:12px 0 12px 28px;border-top:1px solid var(--line);position:relative}
 main li:last-child{border-bottom:1px solid var(--line)}
+main ol{counter-reset:n}
 main li::before{content:"→";position:absolute;left:0;color:var(--accent);font-family:'JetBrains Mono',monospace}
 main strong{color:var(--text);font-weight:600}
 main a.link{color:var(--text);border-bottom:1px solid var(--accent)}
@@ -51,11 +52,20 @@ main a.link:hover{color:var(--accent)}
 .btn::before{content:"";position:absolute;inset:0;background:var(--accent);transform:translateX(-101%);transition:transform .35s cubic-bezier(.7,0,.2,1);z-index:-1}
 .btn:hover{color:#fff;border-color:var(--accent)}.btn:hover::before{transform:none}
 footer{border-top:1px solid var(--line);background:var(--bg-2);padding:26px 0}
-footer .wrap{max-width:1200px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12px;color:var(--dim)}
+footer .wrap{max-width:1200px;display:grid;grid-template-columns:1.3fr 1fr;gap:22px 40px;font-size:12px;color:var(--dim)}
+footer .co{line-height:1.8}
+footer .co b{color:var(--muted);font-weight:500}
+footer .links{flex-wrap:wrap;gap:10px 18px;align-content:flex-start}
+footer .bottom{grid-column:1/-1;border-top:1px solid var(--line);padding-top:16px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+@media (max-width:700px){footer .wrap{grid-template-columns:1fr}}
 footer .links{display:flex;gap:18px}
 footer a:hover{color:var(--accent)}
 .st{display:flex;align-items:center;gap:8px}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok)}
+table.t{width:100%;border-collapse:collapse;margin-top:14px;font-size:14px}
+table.t th,table.t td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;color:var(--muted)}
+table.t th{color:var(--text);font-weight:600;background:var(--bg-2);font-size:13px}
+.tw{overflow-x:auto}
 </style>
 </head>
 <body>
@@ -70,6 +80,7 @@ footer a:hover{color:var(--accent)}
   <p class="meta mono">Applies to: Max Baginda Trading Facebook scheduling app</p>
 </div></header>
 <main><div class="wrap">
+
 <p>In line with Meta Platform policies, you may request deletion of any data or access tokens associated with our Facebook scheduling app at any time. There are two ways to do this.</p>
 
 <h2><span class="n">01</span>Remove the App Yourself</h2>
@@ -88,11 +99,15 @@ footer a:hover{color:var(--accent)}
 <p>Email us to ask that all data we hold about you be deleted. Please include the email address or Facebook account linked to the app so we can verify and process your request.</p>
 <div class="box"><div class="h mono">Email</div><a class="link mono" href="mailto:admin@maxbagindatrading.com?subject=Data%20Deletion%20Request">admin@maxbagindatrading.com</a></div>
 <a class="btn" href="mailto:admin@maxbagindatrading.com?subject=Data%20Deletion%20Request">Send Deletion Request →</a>
+
+<h2><span class="n">03</span>Contact</h2>
+<div class="box"><div class="h mono">Max Baginda Trading</div>
+<p style="margin:0">SSM: 201903003992 (002922418-U)<br>Kampung Senin, Layang-Layang Kanan, 32800 Parit, Perak, Malaysia<br>Email: <a class="link" href="mailto:admin@maxbagindatrading.com">admin@maxbagindatrading.com</a><br>WhatsApp: <a class="link" href="https://wa.me/60135093571">+60 13-509 3571</a></p></div>
 </div></main>
 <footer><div class="wrap mono">
-  <span>© 2026 Max Baginda Trading. All rights reserved.</span>
-  <span class="links"><a href="/privacy">Privacy</a><a href="/deletion">Data Deletion</a><a href="/">Home</a></span>
-  <span class="st"><span class="dot"></span> All Systems Normal</span>
+  <div class="co"><b>Max Baginda Trading</b> (SSM: 201903003992 (002922418-U))<br>Kampung Senin, Layang-Layang Kanan, 32800 Parit, Perak, Malaysia<br>Email: <a href="mailto:admin@maxbagindatrading.com">admin@maxbagindatrading.com</a> · WhatsApp: <a href="https://wa.me/60135093571">+60 13-509 3571</a></div>
+  <div class="links" style="display:flex"><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/refund">Refund</a><a href="/delivery">Delivery</a><a href="/deletion">Data Deletion</a><a href="/">Home</a></div>
+  <div class="bottom"><span>© 2026 Max Baginda Trading. All rights reserved.</span><span class="st"><span class="dot"></span> All Systems Normal</span></div>
 </div></footer>
 </body>
 </html>
